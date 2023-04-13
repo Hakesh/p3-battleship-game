@@ -1,4 +1,4 @@
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+
 
 def main():
     """
@@ -13,17 +13,25 @@ def main():
     """
     print(options_text)
 
-    options_input = input("Enter what you want to do next here: ")
-    if options_input == 1:
-        print("placeholder")
-    
-    elif options_input == 2:
-        print("placeholder")
+    wrong_option = True
+    while wrong_option:
+        options_input = input("Enter what you want to do next here: ")
 
-    else:
-        print("Invalid option! Please only select between option 1 and 2.")
+        if options_input == "1":
+            print("placeholder")
+            wrong_option = False
+    
+        elif options_input == "2":
+            print("placeholder")
+            wrong_option = False
+
+        else:
+            print("\n---------")
+            print("Invalid option! Please only select between option 1 and 2. Try again. \n")
 
 
 print("-" * 39)
 print("Hello and welcome to a game of Hangman! \n")
 main()
+
+# Write your code to expect a terminal of 80 characters wide and 24 rows high
