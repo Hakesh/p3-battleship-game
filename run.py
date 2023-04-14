@@ -46,13 +46,13 @@ def game():
     while not game_over and guesses > 0:
         hidden_word = ""
         for letter in random_word:
-            
             if letter in correct_guesses:
                 hidden_word += letter
             else: 
                 hidden_word += "_"
-        print(f"The word is {hidden_word} \n")
-        print("-" * 79)
+        print("." * 79)
+        print(f"\nThe word is {hidden_word}\n\n")
+
         print(f"You have {guesses} guesses left!\n")
         print(f"What you have already guessed: {guessed_letters}")
 
@@ -61,10 +61,12 @@ def game():
             player_win = True
             break
 
-        guess = input("\nGuess a letter: ")
+        guess = input("\nGuess a letter: ").upper()
+        print("-" * 79)
         if guess.isalpha() and len(guess) == 1:
-            if guess in guessed_letters or guess in correct_guesses:
+            if guess in guessed_letters:
                 print(f"\n\nYou have already guessed this letter: {guess}\n\n\n\n")
+                print(hangman[guesses])
 
             elif guess not in random_word:
                 print(f'\n\n\n\n!!! "{guess}" is not in the word unfortunately !!!')
@@ -73,12 +75,12 @@ def game():
                 print(hangman[guesses])
 
             else: 
-                print(f"\n\nNice one! {guess} is in the word.")
-                print(hangman[guesses])
+                print(f"\n\n\n\nNice one! {guess} is in the word.")
                 correct_guesses.append(guess)
+                guessed_letters.append(guess)
 
         else:
-            print("Invalid guess. Please only guess with 1 letter!")
+            print("\n\nInvalid guess. Please only guess with 1 letter!")
         
         
     #if game_over:
@@ -101,7 +103,7 @@ def get_random_word():
     """
     word = random.choice(words)
 
-    return word
+    return word.upper()
 
 
 def rules():
@@ -182,10 +184,10 @@ def main():
     Calls the funcion which starts the game
     """
 
-    main_menu()
+    #main_menu()
     # guesses = 0
     # test = hangman[guesses]
-    # print(test)
+    print(hangman[8])
 
 main()
 
