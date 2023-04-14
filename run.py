@@ -1,4 +1,5 @@
 from words_list import words
+from hangman_ascii import hangman
 import os
 import random
 
@@ -17,6 +18,8 @@ def enter_username():
 
         if username.isalpha() and len(username) >= 2 and len(username) <= 10:
             clear_terminal()
+            print("-" * 79)
+            print(f"Hello, {username}!\n\nLets play a game of Hangman, shall we?\n\n")
             break
                 
         else:
@@ -33,7 +36,14 @@ def game():
     placeholder
     """
 
-    print(f"Hello, {username}!\n\nLets play a game of Hangman, shall we?")
+    random_word = get_random_word()
+    hidden_word = "_" * len(random_word)
+    guesses = 8
+    guessed_letters = []
+    game_over = False
+    player_win = False
+
+
 
 def get_random_word():
     """
@@ -122,10 +132,7 @@ def main():
     Calls the funcion which starts the game
     """
 
-
-
     main_menu()
-
 
 main()
 
