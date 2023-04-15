@@ -42,26 +42,26 @@ Users are given the option to either look at the rules or start the game upon fi
 Below are the main features that users will come across when they use the program and play the game. The terminal clears it self after every segment to make it clean and avoid having confusing/confliciting information on the screen.
 
 - The main menu is displayed with a message asking for the users input. Depending on the input, either the game will start by asking for the users username, or they'll be shown the rules/instructions.
-![Image of the main menu when you first run the program](docs/main_menu.png)
+![Image of the main menu when you first run the program](docs/features/main_menu.png)
 
 
-2. If the users input is 2 then they will be taken onto the rules page where they will be getting instructed onto how the game works
-![Image of the rules when you type "2" and hit enter on the program](docs/rules.png)
+- If the users input is "2" then they will be taken onto the rules page where they will be getting instructed onto how the game works. When the user is finished reading the rule set, they can press "Y" to continue onto the game or press "N" to go back to the main menu.
+![Image of the rules when you type "2" and hit enter on the program](docs/features/rules.png)
 
-3. 
+- If the users input is "1" on the main menu, or "Y" in the rule they will taken to the username screen where they are asked to input a username that is 2-10 letters long. There is user validation to make sure the usernames dont contain too little or too many characters, or with numbers.
+![Image of the username screen where user is asked to enter their username](docs/features/username.png)
+
+- When the game has been started, the user is shown blank spaces for the word they need to guess
+![Image of the Hangman game once it's been started by the user](docs/features/hangman_game.png)
+
+- Input validation
 ![]()
-
-4. 
-![]()
-![]()
-5. 
-
 
 ### Future Features
 
-- Would like to add a hint for every word as it can be extremely difficult to guess words at time without any kind of clue
+- Would like to add a hint for every word as it can be extremely difficult to guess words at time without any kind of clue.
 
-- A scoring system.
+- Being able to guess the whole word if you think you know it.
 
 - Add colors and more ASCII to make it look more interesting than just a normal terminal.
 

@@ -56,7 +56,7 @@ def game():
             if letter in correct_guesses:
                 hidden_word += letter
             else:
-                hidden_word += "_"
+                hidden_word += "_ "
 
         print("." * 79)
         print(f"\nYou have {guesses} guesses left!\n")
@@ -153,7 +153,7 @@ def rules():
     print("3. Every time you fail to guess the correct letter,"
           "a part of the hangman \nwill be drawn.\n")
     print("4. If you fail to make out the word after 8 guesses,"
-          " you lose \nand the hangman will be fully painted")
+          " you lose \nand the hangman will be fully painted.")
     option_choice = False
     while option_choice is False:
         try:
