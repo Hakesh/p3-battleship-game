@@ -15,7 +15,7 @@ def enter_username():
     username = ""
     while True:
         print("-" * 79)
-        username = input("Please enter a username to continue: ")
+        username = input("Please enter a username to continue: \n")
         username = username.capitalize()
 
         if username.isalpha() and len(username) >= 2 and len(username) <= 10:
@@ -67,7 +67,7 @@ def game():
             player_win = True
             break
 
-        guess = input("\nGuess a letter: ").upper()
+        guess = input("\nGuess a letter: \n").upper()
         print("-" * 79)
         if guess.isalpha() and len(guess) == 1:
             if guess in guessed_letters:
@@ -100,7 +100,7 @@ def game():
         1. The word was: {random_word}
         2. You finished the word with {guesses} guessesleft!''')
 
-        option_choice = input("\n\nDo you want to play again? \nPress 'Y' to play again or 'N' to go go back to the main menu.\n\nEnter here: ").upper()
+        option_choice = input("\n\nDo you want to play again? \nPress 'Y' to play again or 'N' to go go back to the main menu.\n\nEnter here: \n").upper()
         if option_choice == "Y":
             clear_terminal()
             game()
@@ -113,7 +113,7 @@ def game():
         print(hangman[guesses])
         print(f"\n\nYou failed and have run out of guesses :-(\nThe word was {random_word}.")
 
-        option_choice = input("\n\nDo you want to play again? \nPress 'Y' to play again or 'N' to go go back to the main menu.\n\nEnter here: ").upper()
+        option_choice = input("\n\nDo you want to play again? \nPress 'Y' to play again or 'N' to go go back to the main menu.\n\nEnter here: \n").upper()
         if option_choice == "Y":
             clear_terminal()
             game()
@@ -150,7 +150,7 @@ def rules():
     option_choice = False
     while option_choice is False:
         try:
-            option_choice = input("\nAre you ready to play? Y/N: ").upper()
+            option_choice = input("\nAre you ready to play? Y/N: \n").upper()
 
             if option_choice == "Y":
                 option_choice = True
@@ -195,7 +195,7 @@ def main_menu():
 
     option_choice = False
     while option_choice is False:
-        options_input = input("Enter what you want to do next here: ")
+        options_input = input("Enter what you want to do next here: \n")
 
         if options_input == "1":
             option_choice = True
