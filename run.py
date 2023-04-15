@@ -102,13 +102,21 @@ def game():
 
         print("\n\nDo you want to play again?")
         print("Press 'Y' to play again or 'N' to go back to the main menu.")
-        option_choice = input("\nEnter here: \n").upper()
-        if option_choice == "Y":
-            clear_terminal()
-            game()
-        elif option_choice == "N":
-            clear_terminal()
-            main_menu()
+
+        option_choice = False
+        while option_choice == False:
+            options_input = input("\nEnter here: \n").upper()
+            if options_input == "Y":
+                option_choice = True
+                clear_terminal()
+                game()
+            elif options_input == "N":
+                option_choice = True
+                clear_terminal()
+                main_menu()
+            else:
+                print('\nInvalid option. Only "Y" and "N" are valid options')
+                option_choice = False
 
     else:
         clear_terminal()
@@ -118,13 +126,20 @@ def game():
 
         print("\nDo you want to play again?")
         print("Press 'Y' to play again or 'N' to go back to the main menu.")
-        option_choice = input("\nEnter here: \n").upper()
-        if option_choice == "Y":
-            clear_terminal()
-            game()
-        elif option_choice == "N":
-            clear_terminal()
-            main_menu()
+        option_choice = False
+        while option_choice == False:
+            options_input = input("\nEnter here: \n").upper()
+            if options_input == "Y":
+                option_choice = True
+                clear_terminal()
+                game()
+            elif options_input == "N":
+                option_choice = True
+                clear_terminal()
+                main_menu()
+            else:
+                print('\nInvalid option. Only "Y" and "N" are valid options')
+                option_choice = False
 
 
 def get_random_word():
@@ -215,7 +230,7 @@ def main_menu():
 
         else:
             print("\n---------")
-            print("Invalid option! Please select between"
+            print("Invalid option! Please select between "
                   "option 1 and 2. Try again. \n")
 
 

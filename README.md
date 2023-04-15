@@ -29,12 +29,13 @@ Users are given the option to either look at the rules or start the game upon fi
 
 * [Credits](#credits)
 
+---
 
 ## Flowchart
 ![Image of the Flowchart made on Lucidchart](docs/flowchart.png)
 
 - I made this flowchart when I was first trying to figure out how to go about making the hangman part of the program to get a better idea on how to approach it.
-
+---
 ## Features
 
 ### Existing Features
@@ -51,11 +52,38 @@ Below are the main features that users will come across when they use the progra
 - If the users input is "1" on the main menu, or "Y" in the rule they will taken to the username screen where they are asked to input a username that is 2-10 letters long. There is user validation to make sure the usernames dont contain too little or too many characters, or with numbers.
 ![Image of the username screen where user is asked to enter their username](docs/features/username.png)
 
-- When the game has been started, the user is shown blank spaces for the word they need to guess
+- When the game has been started, the user is shown blank spaces for the word they need to guess, how many guesses they have and a list for letters they have guessed. Once they have made their guess, they will be shown whether the letters was correct, wrong or invalid.
 ![Image of the Hangman game once it's been started by the user](docs/features/hangman_game.png)
+- This image shows when the users input was correct
+![Image of the Hangman game when the users input was correct](docs/features/correct_guess.png)
+- This image shows when the users input was wrong
+![Image of the Hangman game when the users input was wrong](docs/features/wrong_guess.png)
+- This image shows when te users input was the same as a previous guess
+![Image of the Hangman game when the users input was the same as a previous guess](docs/features/same_guess.png)
 
-- Input validation
-![]()
+- The user has won by managing to correclty guess all the hidden letters to make out the full word. They have the option to continue playing and get a new hidden random word, or they can go back to the main menu
+![Image of the Hangman game when the users won](docs/features/user_win.png)
+
+- The user has has failed to make out the full word with all their guesses and have now lost the game. They have the option to continue playing and get a new hidden random word, or they can go back to the main menu.
+![Image of the Hangman game when the user lost](docs/features/user_lost.png)
+
+- The following will showcase the programs input validation for when the input is not valid.
+    - Letter used when only "1" or "2" are valid inputs
+![Image of the Hangman game when the user lost](docs/features/wrong_input_menu.png)
+    - Numbers used when only "Y" or "N" are valid inputs
+![Image of the Hangman game when the user lost](docs/features/wrong_input_rules.png)
+    - Numbers used together with username when it is not a valid input.
+![Image of the Hangman game when the user lost](docs/features/wrong_input_username.png)
+    - Any input that is not 1 letter will not be valid, and you will be told so.
+![Image of the Hangman game when the user lost](docs/features/wrong_input_hangman.png)
+    -
+![Image of the Hangman game when the user lost](docs/features/user_lost.png)
+    -
+![Image of the Hangman game when the user lost](docs/features/user_lost.png)
+    -
+![Image of the Hangman game when the user lost](docs/features/user_lost.png)
+    -
+![Image of the Hangman game when the user lost](docs/features/user_lost.png)
 
 ### Future Features
 
@@ -65,7 +93,7 @@ Below are the main features that users will come across when they use the progra
 
 - Add colors and more ASCII to make it look more interesting than just a normal terminal.
 
-
+---
 ## Technologies Used
 
 ### Languages Used
@@ -88,7 +116,7 @@ Python was the only language used in making this program.
 
 - [Am I Responsive](https://ui.dev/amiresponsive) - To show the program hosted on on a wide range of devices.
 
-
+---
 ## Deployment
 
 Github Pages was used to deploy the website. The instructions to do this can be found below:
@@ -103,6 +131,7 @@ Github Pages was used to deploy the website. The instructions to do this can be 
 
 The live link can be found here - https://hakesh.github.io/p2-gaming-quiz/
 
+---
 ## Testing
 
 I manually tested this project by doing the following:
@@ -129,6 +158,9 @@ I manually tested this project by doing the following:
 
 - Not really a bug as its more that I never implemented it, but if you decice to continue playing after winning or losing the hangman ascii art wont show until after you've done your first guess.
 
+- The "Hello {username}" does not get cleared when playing the hangman game in the mock terminal on Heroku. It does when you play it on the IDE terminal however.
+
+---
 
 ## Credits
 
