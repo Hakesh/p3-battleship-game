@@ -51,11 +51,6 @@ def game():
                 hidden_word += letter
             else: 
                 hidden_word += "_"
-        # print("." * 79)
-        # print(f"\nThe word is {hidden_word}\n\n")
-
-        # print(f"You have {guesses} guesses left!\n")
-        # print(f"What you have already guessed: {guessed_letters}")
 
         print("." * 79)
         print(f"\n\nYou have {guesses} guesses left!\n")
@@ -94,10 +89,32 @@ def game():
             print(hangman[guesses])
 
     if player_win == True:
-        print("Good job! You won!")
+        clear_terminal()
+        print("GOOD JOB! You won!\n")
+        print(f'''Game info:
+        1. The word was: {random_word}
+        2. You finished the word with {guesses} left!''')
+
+        option_choice = input("\n\nDo you want to play again? \nPress 'Y' to play again or 'N' to go go back to the main menu.\n\nEnter here: ").upper()
+        if option_choice == "Y":
+            clear_terminal()
+            game()
+        elif option_choice == "N":
+            clear_terminal()
+            main_menu()
 
     else:
-        print(f"You failed :-(", f"The word was {random_word}")
+        clear_terminal()
+        print(hangman[guesses])
+        print(f"\n\n\You failed and have run out of guesses :-(\nThe word was {random_word}.")
+
+        option_choice = input("\n\nDo you want to play again? \nPress 'Y' to play again or 'N' to go go back to the main menu.\n\nEnter here: ").upper()
+        if option_choice == "Y":
+            clear_terminal()
+            game()
+        elif option_choice == "N":
+            clear_terminal()
+            main_menu()
 
 
 def get_random_word():
@@ -188,10 +205,5 @@ def main():
     """
 
     main_menu()
-    # guesses = 0
-    # test = hangman[guesses]
-    # print(hangman[8])
 
 main()
-
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
