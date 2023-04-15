@@ -21,11 +21,11 @@ def enter_username():
         if username.isalpha() and len(username) >= 2 and len(username) <= 10:
             clear_terminal()
             print("-" * 79)
-            print(f"Hello, {username}!\n\nLets play a game of Hangman, shall we?")
+            print(f"Hello, {username}!\n\nLets play a game of Hangman!")
             print(hangman[8])
             break
         else:
-            print(f'\nUsername "{username}" is invalid. Please make sure that: \n')
+            print(f'\nUsername "{username}" is invalid. Make sure that: \n')
             print("    1. That there is no spaces in your username")
             print("    2. That the name is between 2-10 letters")
             print("    3. That there is no number(s) in your username\n")
@@ -77,7 +77,7 @@ def game():
 
             elif guess not in random_word:
                 clear_terminal()
-                print(f'\n\n!!! "{guess}" is not in the word unfortunately !!!')
+                print(f'\n\n!! "{guess}" is not in the word unfortunately !!')
                 guesses -= 1
                 guessed_letters.append(guess)
                 print(hangman[guesses])
@@ -100,7 +100,9 @@ def game():
         1. The word was: {random_word}
         2. You finished the word with {guesses} guesses left!''')
 
-        option_choice = input("\n\nDo you want to play again? \nPress 'Y' to play again or 'N' to go back to the main menu.\n\nEnter here: \n").upper()
+        print("\n\nDo you want to play again?")
+        print("Press 'Y' to play again or 'N' to go back to the main menu.")
+        option_choice = input("\nEnter here: \n").upper()
         if option_choice == "Y":
             clear_terminal()
             game()
@@ -111,9 +113,12 @@ def game():
     else:
         clear_terminal()
         print(hangman[guesses])
-        print(f"\n\nYou failed and have run out of guesses :-(\nThe word was {random_word}.")
+        print("\n\nYou failed and ran out of guesses :-(\n"
+              f"The word was {random_word}.")
 
-        option_choice = input("\n\nDo you want to play again? \nPress 'Y' to play again or 'N' to go back to the main menu.\n\nEnter here: \n").upper()
+        print("\nDo you want to play again?")
+        print("Press 'Y' to play again or 'N' to go back to the main menu.")
+        option_choice = input("\nEnter here: \n").upper()
         if option_choice == "Y":
             clear_terminal()
             game()
@@ -140,13 +145,15 @@ def rules():
     """
     clear_terminal()
     print("-" * 79)
-    rules_text = """The rules are as follows:\n
-    1. You will get 8 chances to guess the correct letters of \nthe hidden word.\n
-    2. Your objective is to find all the correct letters before your \nguesses run out.\n
-    3. Every time you fail to guess the correct letter, a part of the hangman \nwill be drawn.\n
-    """
-    print(rules_text)
+    print("The rules are as follows:\n")
+    print("You get 8 chances to guess the correct letters of"
+          "\nthe hidden word.\n").
 
+    print("2. Your objective is to get the correct letters"
+          "before your \nguesses run out.\n")
+
+    print("3. Every time you fail to guess the correct letter,"
+          "a part of the hangman \nwill be drawn.\n")
     option_choice = False
     while option_choice is False:
         try:
@@ -172,7 +179,7 @@ def rules():
 def clear_terminal():
     """
     This function clears the terminal when called upon.
-    Taken from here: https://stackoverflow.com/questions/2084508/clear-terminal-in-python
+    https://stackoverflow.com/questions/2084508/clear-terminal-in-python
     """
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -180,8 +187,8 @@ def clear_terminal():
 def main_menu():
     """
     The main menu for the game, lets the user either read the rules for Hangman
-    or takes the user to where he can create his username to then start the game
-    depending on user input.
+    or takes the user to where he can create his username to then start the
+    game depending on user input.
     """
 
     print("-" * 79)
@@ -208,7 +215,8 @@ def main_menu():
 
         else:
             print("\n---------")
-            print("Invalid option! Please select between option 1 and 2. Try again. \n")
+            print("Invalid option! Please select between"
+                  "option 1 and 2. Try again. \n")
 
 
 def main():
