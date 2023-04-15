@@ -19,7 +19,8 @@ def enter_username():
         if username.isalpha() and len(username) >= 2 and len(username) <= 10:
             clear_terminal()
             print("-" * 79)
-            print(f"Hello, {username}!\n\nLets play a game of Hangman, shall we?\n\n\n\n\n\n")
+            print(f"Hello, {username}!\n\n\nLets play a game of Hangman, shall we?")
+            print(hangman[8])
             break
                 
         else:
@@ -50,12 +51,16 @@ def game():
                 hidden_word += letter
             else: 
                 hidden_word += "_"
+        # print("." * 79)
+        # print(f"\nThe word is {hidden_word}\n\n")
+
+        # print(f"You have {guesses} guesses left!\n")
+        # print(f"What you have already guessed: {guessed_letters}")
+
         print("." * 79)
-        print(f"\nThe word is {hidden_word}\n\n")
-
-        print(f"You have {guesses} guesses left!\n")
-        print(f"What you have already guessed: {guessed_letters}")
-
+        print(f"\n\nYou have {guesses} guesses left!\n")
+        print(f"What you have already guessed: {guessed_letters}\n\n")
+        print(f"The word is {hidden_word}")
         if "_" not in hidden_word:
             game_over = True
             player_win = True
@@ -65,36 +70,34 @@ def game():
         print("-" * 79)
         if guess.isalpha() and len(guess) == 1:
             if guess in guessed_letters:
-                print(f"\n\nYou have already guessed this letter: {guess}\n\n\n\n")
+                clear_terminal()
+                print(f'\n\nYou have already guessed this letter: "{guess}"')
                 print(hangman[guesses])
 
             elif guess not in random_word:
-                print(f'\n\n\n\n!!! "{guess}" is not in the word unfortunately !!!')
+                clear_terminal()
+                print(f'\n\n!!! "{guess}" is not in the word unfortunately !!!')
                 guesses -= 1
                 guessed_letters.append(guess)
                 print(hangman[guesses])
 
             else: 
-                print(f"\n\n\n\nNice one! {guess} is in the word.")
+                clear_terminal()
+                print(f'\n\nNice one! "{guess}" is in the word.')
                 correct_guesses.append(guess)
                 guessed_letters.append(guess)
+                print(hangman[guesses])
 
         else:
+            clear_terminal()
             print("\n\nInvalid guess. Please only guess with 1 letter!")
-        
-        
-    #if game_over:
-        #print("Ez Win, placeholder")
-
-    #else:
-        #print(f"Ez loss, the word was {random_word}")
-
-
-    
+            print(hangman[guesses])
 
     if player_win == True:
-        print("You won!")
+        print("Good job! You won!")
 
+    else:
+        print(f"You failed :-(", f"The word was {random_word}")
 
 
 def get_random_word():
@@ -184,10 +187,10 @@ def main():
     Calls the funcion which starts the game
     """
 
-    #main_menu()
+    main_menu()
     # guesses = 0
     # test = hangman[guesses]
-    print(hangman[8])
+    # print(hangman[8])
 
 main()
 
