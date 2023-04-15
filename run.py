@@ -59,8 +59,8 @@ def game():
                 hidden_word += "_"
 
         print("." * 79)
-        print(f"\n\nYou have {guesses} guesses left!\n")
-        print(f"What you have already guessed: {guessed_letters}\n\n")
+        print(f"\nYou have {guesses} guesses left!\n")
+        print(f"What you have already guessed: {guessed_letters}\n")
         print(f"The word is {hidden_word}")
         if "_" not in hidden_word:
             game_over = True
@@ -98,7 +98,7 @@ def game():
         print("\n\nGOOD JOB! You won!\n")
         print(f'''Game info:
         1. The word was: {random_word}
-        2. You finished the word with {guesses} guessesleft!''')
+        2. You finished the word with {guesses} guesses left!''')
 
         option_choice = input("\n\nDo you want to play again? \nPress 'Y' to play again or 'N' to go go back to the main menu.\n\nEnter here: \n").upper()
         if option_choice == "Y":
