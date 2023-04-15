@@ -104,7 +104,7 @@ def game():
         print("Press 'Y' to play again or 'N' to go back to the main menu.")
 
         option_choice = False
-        while option_choice == False:
+        while option_choice is False:
             options_input = input("\nEnter here: \n").upper()
             if options_input == "Y":
                 option_choice = True
@@ -127,7 +127,7 @@ def game():
         print("\nDo you want to play again?")
         print("Press 'Y' to play again or 'N' to go back to the main menu.")
         option_choice = False
-        while option_choice == False:
+        while option_choice is False:
             options_input = input("\nEnter here: \n").upper()
             if options_input == "Y":
                 option_choice = True

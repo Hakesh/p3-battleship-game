@@ -69,21 +69,18 @@ Below are the main features that users will come across when they use the progra
 
 - The following will showcase the programs input validation for when the input is not valid.
     - Letter used when only "1" or "2" are valid inputs
-![Image of the Hangman game when the user lost](docs/features/wrong_input_menu.png)
+![Image of the Hangman game when there is wrong input in the main menu](docs/features/wrong_input_menu.png)
     - Numbers used when only "Y" or "N" are valid inputs
-![Image of the Hangman game when the user lost](docs/features/wrong_input_rules.png)
+![Image of the Hangman game when there is wrong input in the rule screen](docs/features/wrong_input_rules.png)
     - Numbers used together with username when it is not a valid input.
-![Image of the Hangman game when the user lost](docs/features/wrong_input_username.png)
+![Image of the Hangman game when there is wrong input in the username screen](docs/features/wrong_input_username.png)
     - Any input that is not 1 letter will not be valid, and you will be told so.
-![Image of the Hangman game when the user lost](docs/features/wrong_input_hangman.png)
-    -
-![Image of the Hangman game when the user lost](docs/features/user_lost.png)
-    -
-![Image of the Hangman game when the user lost](docs/features/user_lost.png)
-    -
-![Image of the Hangman game when the user lost](docs/features/user_lost.png)
-    -
-![Image of the Hangman game when the user lost](docs/features/user_lost.png)
+![Image of the Hangman game when there is wrong input in the hangman game](docs/features/wrong_input_hangman.png)
+    - Any input that is not "Y" or "N" will not be valid"
+![Image of the Hangman game when there is wrong input in the "win" screen](docs/features/wrong_input_win.png)
+    - Any input that is not "Y" or "N" will not be valid"
+![Image of the Hangman game when there is wrong input in the "lost" screen](docs/features/wrong_input_lost.png)
+    
 
 ### Future Features
 
@@ -119,17 +116,15 @@ Python was the only language used in making this program.
 ---
 ## Deployment
 
-Github Pages was used to deploy the website. The instructions to do this can be found below:
+[Heroku](https://www.heroku.com/?) was used to deploy a mock terminal of this program.
 
-1. Log in or sign up to Github.
-2. Find the repository for this project, [p2-gaming-quiz](https://github.com/Hakesh/p2-gaming-quiz).
-3. Click on the "Settings" button in the menu bar for the repository.
-4. Click on Pages in the left hand side navigation bar.
-5. From the Source dropdown menu, select "Deploy from a branch".
-6. From the Branch dropdown menus, select "main" and "/root" respectively.
-7. Click Save. Your live Github Pages site is now deployed at the URL shown at the top of the page. **Keep in mind it might take a bit before the page is deployed and a URL is shown, you might have to refresh the page after a few minutes to get it to show.**
+Steps for deployment: 
 
-The live link can be found here - https://hakesh.github.io/p2-gaming-quiz/
+1. Clone or fork the repository for this project, [p3-hangman-game](https://github.com/Hakesh/p3-hangman-word-game)
+2. Create a new Heroku app.
+3. Set the buildpacks to Python and Nodejs, in that specific order.
+4. Link the Heroku app to the cloned or forked GitHub Repository
+5. Click on deploy
 
 ---
 ## Testing
@@ -165,7 +160,7 @@ I manually tested this project by doing the following:
 ## Credits
 
 - [How to build HANGMAN with Python in 10 MINUTES by Kite](https://www.youtube.com/watch?v=m4nEnsavl6w)
-  - This video was useful as it gave me an idea on how to go about making the Hangman game part
+  - This video was useful as it gave me an idea on how to go about making the Hangman game part.
 
 - [Clear Terminal code by Poke](https://stackoverflow.com/questions/2084508/clear-terminal-in-python)
   - Wasn't sure how to clear the terminal mid-program but Poke had an excellent reply to the original question. I turned his code
