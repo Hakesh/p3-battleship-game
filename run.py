@@ -3,12 +3,14 @@ from hangman_ascii import hangman
 import os
 import random
 
+
 def enter_username():
     """
-    This functions lets the user type in a username and makes sure that it follows the requirements to continue
-    or they will be asked to try again until it is valid
+    This functions lets the user type in a username and makes sure that it
+    follows the requirements to continueor they will be asked to try again
+    until it is valid
     """
-    
+
     global username
     username = ""
     while True:
@@ -22,7 +24,6 @@ def enter_username():
             print(f"Hello, {username}!\n\n\nLets play a game of Hangman, shall we?")
             print(hangman[8])
             break
-                
         else:
             print(f'\nUsername "{username}" is invalid. Please make sure that: \n')
             print("    1. That there is no spaces in your username")
@@ -34,7 +35,12 @@ def enter_username():
 
 def game():
     """
-    placeholder
+    Starts the Hangman game for the user.
+    If they run out of guesses by guessing the wrong letters, they lose.
+    If they manage to guess all the correct letters for the randomly
+    selected word, they win.
+    The user may choose to continue playing or go back to the
+    main menu no matter if they win or loose.
     """
 
     random_word = get_random_word()
@@ -49,7 +55,7 @@ def game():
         for letter in random_word:
             if letter in correct_guesses:
                 hidden_word += letter
-            else: 
+            else:
                 hidden_word += "_"
 
         print("." * 79)
@@ -75,8 +81,7 @@ def game():
                 guesses -= 1
                 guessed_letters.append(guess)
                 print(hangman[guesses])
-
-            else: 
+            else:
                 clear_terminal()
                 print(f'\n\nNice one! "{guess}" is in the word.')
                 correct_guesses.append(guess)
@@ -88,12 +93,12 @@ def game():
             print("\n\nInvalid guess. Please only guess with 1 letter!")
             print(hangman[guesses])
 
-    if player_win == True:
+    if player_win is True:
         clear_terminal()
-        print("GOOD JOB! You won!\n")
+        print("\n\nGOOD JOB! You won!\n")
         print(f'''Game info:
         1. The word was: {random_word}
-        2. You finished the word with {guesses} left!''')
+        2. You finished the word with {guesses} guessesleft!''')
 
         option_choice = input("\n\nDo you want to play again? \nPress 'Y' to play again or 'N' to go go back to the main menu.\n\nEnter here: ").upper()
         if option_choice == "Y":
@@ -106,7 +111,7 @@ def game():
     else:
         clear_terminal()
         print(hangman[guesses])
-        print(f"\n\n\You failed and have run out of guesses :-(\nThe word was {random_word}.")
+        print(f"\n\nYou failed and have run out of guesses :-(\nThe word was {random_word}.")
 
         option_choice = input("\n\nDo you want to play again? \nPress 'Y' to play again or 'N' to go go back to the main menu.\n\nEnter here: ").upper()
         if option_choice == "Y":
@@ -120,6 +125,7 @@ def game():
 def get_random_word():
     """
     Gets a random word from the list "words" in the words_list.py file
+    and then returns it.
     """
     word = random.choice(words)
 
@@ -127,26 +133,31 @@ def get_random_word():
 
 
 def rules():
+    """
+    Instructions/Rules for how the hangman games works.
+    User is then asked to type Y or N to either start the game
+    or go back to the main menu.
+    """
     clear_terminal()
     print("-" * 79)
     rules_text = """The rules are as follows:\n
-    1. 
-    2.
-    3.
-    4."""
+    1. You will get 8 chances to guess the correct letters of the hidden word.\n
+    2. Your objective is to find all the correct letters before your guesses run out.\n
+    3. Every time you fail to guess the correct letter, a part of the hangman will be drawn.\n
+    """
     print(rules_text)
-    
+
     option_choice = False
     while option_choice is False:
         try:
-            option_choice = input("\nAre you ready to play? Y/N: ")
+            option_choice = input("\nAre you ready to play? Y/N: ").upper()
 
-            if option_choice == "y" or option_choice == "Y":
+            if option_choice == "Y":
                 option_choice = True
                 clear_terminal()
                 enter_username()
 
-            elif option_choice == "n" or option_choice == "N":
+            elif option_choice == "N":
                 option_choice = True
                 clear_terminal()
                 main_menu()
@@ -160,7 +171,7 @@ def rules():
 
 def clear_terminal():
     """
-    This function clears the terminal when called upon. 
+    This function clears the terminal when called upon.
     Taken from here: https://stackoverflow.com/questions/2084508/clear-terminal-in-python
     """
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -168,8 +179,9 @@ def clear_terminal():
 
 def main_menu():
     """
-    The main menu for the game, lets the user read the rules for Hangman
-    or starts the game depending on user input
+    The main menu for the game, lets the user either read the rules for Hangman
+    or takes the user to where he can create his username to then start the game
+    depending on user input.
     """
 
     print("-" * 79)
@@ -205,5 +217,6 @@ def main():
     """
 
     main_menu()
+
 
 main()
