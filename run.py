@@ -21,7 +21,7 @@ def enter_username():
         if username.isalpha() and len(username) >= 2 and len(username) <= 10:
             clear_terminal()
             print("-" * 79)
-            print(f"Hello, {username}!\n\n\nLets play a game of Hangman, shall we?")
+            print(f"Hello, {username}!\n\nLets play a game of Hangman, shall we?")
             print(hangman[8])
             break
         else:
@@ -141,9 +141,9 @@ def rules():
     clear_terminal()
     print("-" * 79)
     rules_text = """The rules are as follows:\n
-    1. You will get 8 chances to guess the correct letters of the hidden word.\n
-    2. Your objective is to find all the correct letters before your guesses run out.\n
-    3. Every time you fail to guess the correct letter, a part of the hangman will be drawn.\n
+    1. You will get 8 chances to guess the correct letters of \nthe hidden word.\n
+    2. Your objective is to find all the correct letters before your \nguesses run out.\n
+    3. Every time you fail to guess the correct letter, a part of the hangman \nwill be drawn.\n
     """
     print(rules_text)
 
