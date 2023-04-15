@@ -100,7 +100,7 @@ def game():
         1. The word was: {random_word}
         2. You finished the word with {guesses} guesses left!''')
 
-        option_choice = input("\n\nDo you want to play again? \nPress 'Y' to play again or 'N' to go go back to the main menu.\n\nEnter here: \n").upper()
+        option_choice = input("\n\nDo you want to play again? \nPress 'Y' to play again or 'N' to go back to the main menu.\n\nEnter here: \n").upper()
         if option_choice == "Y":
             clear_terminal()
             game()
@@ -113,7 +113,7 @@ def game():
         print(hangman[guesses])
         print(f"\n\nYou failed and have run out of guesses :-(\nThe word was {random_word}.")
 
-        option_choice = input("\n\nDo you want to play again? \nPress 'Y' to play again or 'N' to go go back to the main menu.\n\nEnter here: \n").upper()
+        option_choice = input("\n\nDo you want to play again? \nPress 'Y' to play again or 'N' to go back to the main menu.\n\nEnter here: \n").upper()
         if option_choice == "Y":
             clear_terminal()
             game()
