@@ -146,16 +146,14 @@ def rules():
     clear_terminal()
     print("-" * 79)
     print("The rules are as follows:\n")
-    print("You get 8 chances to guess the correct letters of"
-          "\nthe hidden word.\n").
-
+    print("You get 8 chances to guess the correct letters of\n"
+          "the hidden word.\n")
     print("2. Your objective is to get the correct letters"
           "before your \nguesses run out.\n")
-
     print("3. Every time you fail to guess the correct letter,"
           "a part of the hangman \nwill be drawn.\n")
     print("4. If you fail to make out the word after 8 guesses,"
-          " you lose and the hangman will be fully drawn")
+          " you lose \nand the hangman will be fully painted")
     option_choice = False
     while option_choice is False:
         try:
