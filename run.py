@@ -154,6 +154,8 @@ def rules():
 
     print("3. Every time you fail to guess the correct letter,"
           "a part of the hangman \nwill be drawn.\n")
+    print("4. If you fail to make out the word after 8 guesses,"
+          " you lose and the hangman will be fully drawn")
     option_choice = False
     while option_choice is False:
         try:
